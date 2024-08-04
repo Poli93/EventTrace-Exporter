@@ -1,5 +1,6 @@
 -- Idan's event trace exporter, mostly meant for debugging event scripts
 
+local addon, EventExporter = ... 
 local eventLogging = false
 local blacklistEvents = {
 --    ["PLAYER_STARTED_MOVING"] = true,
@@ -57,10 +58,10 @@ end
 
 local loadframe = CreateFrame("Frame")
 loadframe:RegisterEvent("ADDON_LOADED")
-loadframe:SetScript("OnEvent", function(self, event, addon)
-    if addon == "EventTracer" then
-	if not EventTracerData then 			
-        EventTracerData = EventTracerData or {}
+loadframe:SetScript("OnEvent", function(self, event, ...)
+    if ... == addon then
+	    if EventTracerData == nil then
+            EventTracerData = {}
+        end			
     end
 end)
-
