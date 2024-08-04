@@ -1,5 +1,5 @@
 ## Interface: 30305
-## Title: EventTrace Exporter
+## Title: EventTracer
 ## Notes: Exports EventTrace data to SavedVariables
 ## Author: Idan
 ## Version: 1.0
