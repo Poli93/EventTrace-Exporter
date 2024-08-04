@@ -56,3 +56,11 @@ SlashCmdList["EVENTEXPORTER"] = function(msg)
     end
 end
 
+local loadframe = CreateFrame("Frame")
+loadframe:RegisterEvent("ADDON_LOADED")
+loadframe:SetScript("OnEvent", function(self, event, addon)
+    if addon == "EventTracer" then
+        EventTracerData = EventTracerData or {}
+    end
+end)
+
