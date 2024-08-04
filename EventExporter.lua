@@ -15,13 +15,13 @@ frame:SetScript('OnEvent', function(self, event, ...)
 			   --local timestamp = date("%Y-%m-%d %H:%M:%S")
 			   --local eventData = {timestamp = timestamp, event = event, args = {...}}
 			   EventTracerData[event] = {CombatLogGetCurrentEventInfo()};
-			   print(event, CombatLogGetCurrentEventInfo()); 	   
+			   --print(event, CombatLogGetCurrentEventInfo()); 	   
 			elseif event == "COMBAT_TEXT_UPDATE" then	
 			   EventTracerData[event] = {GetCurrentCombatTextEventInfo()};
-			   print(event, GetCurrentCombatTextEventInfo()); 
+			   --print(event, GetCurrentCombatTextEventInfo()); 
 			else
 				EventTracerData[event] = {...};
-				print(event, ...); 
+				--print(event, ...); 
 			   --table.insert(EventTracerData, eventData)
 			end
 		end
